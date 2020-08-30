@@ -1,4 +1,6 @@
-script: "bundle exec optimal-ci"
+script:
+  - bundle install
+  - bundle exec optimal-ci
 env:
   global:
     - CI_NODE_TOTAL=3
