@@ -1,5 +1,6 @@
 script:
   - bundle install
+  - bundle update optimal-ci
   - bundle exec optimal-rspec
 env:
   global:
