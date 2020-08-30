@@ -8,3 +8,8 @@ env:
     - CI_NODE_INDEX=0
     - CI_NODE_INDEX=1
     - CI_NODE_INDEX=2
+
+notifications:
+  email:
+    on_success: never
+    on_failure: always
