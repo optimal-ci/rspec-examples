@@ -6,10 +6,10 @@ jobs:
       - image: cimg/ruby:2.6.3-node
     parallelism: 3
     environment:
-			- RAILS_ENV: test
+      - RAILS_ENV: test
     steps:
       - checkout
-			- bundle exec rspec
+      - bundle exec rspec
 
 workflows:
   version: 2
