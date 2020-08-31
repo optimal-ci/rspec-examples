@@ -3,15 +3,13 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: cimg/ruby:2.6.3-node
+      - image: circleci/ruby:2.6.3
     parallelism: 3
     environment:
       - RAILS_ENV: test
     steps:
       - checkout
-      - run:
-        name: run rspec
-        command: bundle exec rspec
+      - run: bundle exec rspec
 
 workflows:
   version: 2
