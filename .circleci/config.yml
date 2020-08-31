@@ -1,0 +1,19 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: cimg/ruby:2.6.3-node
+    parallelism: 3
+    environment:
+			- RAILS_ENV: test
+    steps:
+      - checkout
+			- bundle exec rspec
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test
+
