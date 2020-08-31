@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/optimal-ci/optimal-ci
-  revision: 03e21e2cb7fdb0deb70fbcb5b85f2b651275a384
+  revision: 375339f6a6c4ce0832182157361cc8eaed7ddf8f
   specs:
-    optimal-ci (0.1.0)
+    optimal-ci (0.0.1)
       rest-client (~> 2.1.0)
 
 GEM
