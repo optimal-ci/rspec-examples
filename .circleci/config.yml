@@ -9,6 +9,7 @@ jobs:
       - RAILS_ENV: test
     steps:
       - checkout
+      - run: gem install -v '2.1.4'
       - run: bundle install
       - run: bundle exec rspec
 
