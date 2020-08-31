@@ -9,7 +9,9 @@ jobs:
       - RAILS_ENV: test
     steps:
       - checkout
-      - bundle exec rspec
+      - run:
+        name: run rspec
+        command: bundle exec rspec
 
 workflows:
   version: 2
