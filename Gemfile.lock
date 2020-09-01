@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/optimal-ci/optimal-ci
-  revision: 0bf77a58be5ee1fc9e6d8c326f93201a6ba05d57
+  revision: 3d5c0159649dcaf082126900d69f78fe8c25605d
   specs:
     optimal-ci (0.0.2)
       rest-client (~> 2.1.0)

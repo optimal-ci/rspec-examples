@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  test:
+  optimal-ci:
     docker:
       - image: circleci/ruby:2.6.3
     parallelism: 3
@@ -12,10 +12,22 @@ jobs:
       - run: gem install bundler -v '2.1.4'
       - run: bundle install
       - run: bundle exec optimal-rspec spec/
-
+  circleci-split-by-name:
+    docker:
+      - image: circleci/ruby:2.6.3
+    parallelism: 3
+    environment:
+      - RAILS_ENV: test
+    steps:
+      - checkout
+      - run: gem install bundler -v '2.1.4'
+      - run: bundle install
+      - run: circleci tests glob spec/**/*_spec.rb | circleci tests split > /tmp/tests-to-run
+      - run: bundle exec rspec $(cat /tmp/tests-to-run)
 workflows:
   version: 2
   test:
     jobs:
-      - test
+      - optimal-ci
+      - circleci-split-by-name
 
