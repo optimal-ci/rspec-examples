@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run: gem install bundler -v '2.1.4'
       - run: bundle install
-      - run: bundle exec optimal-rspec
+      - run: bundle exec optimal-rspec spec/
 
 workflows:
   version: 2
