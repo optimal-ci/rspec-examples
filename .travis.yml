@@ -1,6 +1,6 @@
 script:
   - bundle install
-  - bundle exec optimal-rspec
+  - bundle exec optimal-rspec spec/fast/
 env:
   global:
     - CI_NODE_TOTAL=3
