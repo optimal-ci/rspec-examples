@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run: gem install bundler -v '2.1.4'
       - run: bundle install
-      - run: bundle exec optimal-rspec spec/fast/
+      - run: bundle exec optimal-rspec spec/real_timing/
   circleci-split-by-name:
     docker:
       - image: circleci/ruby:2.6.3
@@ -22,7 +22,7 @@ jobs:
       - checkout
       - run: gem install bundler -v '2.1.4'
       - run: bundle install
-      - run: circleci tests glob spec/fast/*_spec.rb | circleci tests split > /tmp/tests-to-run
+      - run: circleci tests glob spec/real_timing/*_spec.rb | circleci tests split > /tmp/tests-to-run
       - run: bundle exec rspec $(cat /tmp/tests-to-run)
 workflows:
   version: 2
